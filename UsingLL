@@ -1,0 +1,70 @@
+
+public class stackusingll {
+	class Node {
+	    int item;
+	    Node next;
+	    public Node(int item){
+	        this.item=item;
+	    }
+	}
+	    public static int size;
+	   static Node head;
+	   static Node tail;
+	   public void push(int item) {
+	        Node n1=new  Node(item);
+	        if(size==0){
+	        	head=n1;
+	        	tail=head;
+	        	tail.next=null;
+	        }
+	        else {	        
+	        	tail.next=n1;
+	        	tail=n1;
+	        	n1.next=null;
+	        	
+	        }
+	        size++;
+	        System.out.println(" "+size+" "+n1.item+n1.next);
+	    }
+	    public void d() {
+	        if(size==0) {
+	            System.out.println("The stock is empty");
+	        }
+	        else {
+	        	Node current=this.head;
+	        	int count=0;
+	        	while(count<size-2){
+	        		current=current.next;
+	        		count++;
+	        	}
+	        	//System.out.println(current.item);
+	        	current.next=null;
+	        	size--;
+	        	
+	        }
+	        
+   }
+	    public void display() {
+	        Node current=this.head;
+	        while(current!=null) {
+	            System.out.println(current.item);
+	            current=current.next;
+	        }
+	    }
+
+	    public static void main(String[] args) {
+	        stackusingll S=new stackusingll();
+	        S.push(10);
+	        S.push(20);
+	        S.push(30);
+	        S.push(40);
+	        S.push(565);
+	        System.out.println("hi");
+	        S.d();
+	        S.d();
+	        S.display();
+	    }
+
+	}
+
+
